@@ -36,9 +36,10 @@ def create_app(test_config=None):
         if request.method == 'POST':
             title = request.form['title']
             body = request.form['body']
+            data = requests.get(f"https://pokeapi.co/api/v2/pokemon/{title}").json()
+
             print(request.form)
-            data=request.form
-            return render_template('test.html', data=data)
+            return render_template('test.html',data=data)
         else:
             return render_template('index.html')
     return app

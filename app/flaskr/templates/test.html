@@ -6,7 +6,9 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>{{data['title']}}</h1>
-    <p>{{data['body']}}</p>
+    <h1>{{data.name}}</h1>
+    {% for type in data.types %}
+    <h3>{{type.type.name}}</h3>
+    {% endfor %}
   </body>
 </html>
